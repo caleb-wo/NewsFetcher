@@ -8,7 +8,8 @@ I'm making this project because one, I think it'd be really cool, & two, I want 
 
 ## Progress
 
-- [ ] Determine best free APIs to use
+- [x] Determine best free APIs to use
+  - I will be using **[NEWSDATA.IO's API](https://newsdata.io)**. It aggregates news information from various publishers & bundles them together—it's exactly what I was looking for! 
 - [ ] Model application architecture (MVVM)
 - [ ] Plan UI/UX (Figma)
 
@@ -18,6 +19,7 @@ I'm making this project because one, I think it'd be really cool, & two, I want 
 - Swift
 - SwiftUI
 - SwiftData
+- [NEWSDATA.IO's API](https://newsdata.io)
 
 ## Knowledge
 
