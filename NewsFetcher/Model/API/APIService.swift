@@ -8,12 +8,12 @@
 import Foundation
 
 public struct APIService {
-    private let apiKey: String? = {
+    private let baseUrl = "https://newsdata.io/api/1/"
+    private func getAPIKey() throws -> String? {
         guard let path = Bundle.main.url(forResource: "Secrets",
                                         withExtension: "plist"),
               let data = try? Data(contentsOf: path) else {
-            print("Error: Could not find Secrets.plist or read data.")
-            return nil
+            throw APIError.plistDecodingError
         }
 
         do {
@@ -21,11 +21,9 @@ public struct APIService {
             let secrets = try decoder.decode(Secrets.self, from: data)
             return secrets.NewsApiKey
         } catch {
-            print("Error decoding plist: \(error)")
-            return nil
+            throw APIError.plistDecodingError
         }
-    }()
-    
+    }
 }
 
 struct Secrets: Decodable {
